@@ -1,0 +1,14 @@
+{
+  "name": "skill-garden",
+  "description": "Google Workspace productivity skills: routines, one task list, meetings and mail. Safe by default.",
+  "owner": {
+    "name": "Tomas Sezima"
+  },
+  "plugins": [
+    {
+      "name": "skill-garden",
+      "source": "./",
+      "description": "Productivity skills for Google Workspace: routines, tasks, meetings and mail."
+    }
+  ]
+}

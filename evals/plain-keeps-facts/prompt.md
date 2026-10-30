@@ -1,0 +1,1 @@
+Make this plainer: Going forward, the platform team will spearhead the rollout across 3 regions — a move that, all things considered, should bring about a 12 percent cut in hosting costs — with the go-live pinned down for 15 January.

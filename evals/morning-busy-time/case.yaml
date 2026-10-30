@@ -1,0 +1,15 @@
+schema_version: "1.1"
+name: morning-busy-time
+description: S3. Free hours count a solo doctor appointment as busy, ignore all-day and declined events, and treat a focus block as time for tasks.
+tags: [behavior, routine]
+plugins: ["../..", "harness"]
+runs: 3
+context:
+  scaffold_script: seed.sh
+execution:
+  max_turns: 30
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Skill, AskUserQuestion]
+  append_system_prompt: |
+    Workspace home: ./workspace-home (inside the current working directory)
+    Today is Monday 2026-11-02 and the time is 08:45 in Europe/Prague. There is no shell in this session, so use this date and time.
