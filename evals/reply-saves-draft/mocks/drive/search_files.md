@@ -1,0 +1,3 @@
+{"files": [
+ {"id": "hp2026", "title": "Hiring plan 2026", "owner": "alex@example.com", "createdTime": "2026-09-14T10:00:00+02:00", "webViewLink": "https://docs.google.com/document/d/hp2026"}
+]}

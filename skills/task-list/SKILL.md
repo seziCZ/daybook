@@ -25,7 +25,7 @@ The file and item format is the `tasks.md` section of the home reference in the 
 1. **Give one outcome.** Each request gets one outcome: task, waiting on someone, or not captured (say why in a few words). Outside a routine, a request can also be "do now": a few minutes, done in this session, with no item. A routine only captures.
 2. **Write the item.** Start the action with a verb and name the result. Add a tag from `Task tags` of the profile when one fits. Propose the size from the text. Add `due:` only when the user or the source names a date. A waiting item gets `waiting:<Name> since:<the date the caller passes, otherwise today>`. When a note in the `Meeting notes folder` of the profile matches by keyword, add a link to it.
 3. **Skip duplicates.** A duplicate is defined in the `tasks.md` section of the home reference. Say so, and skip it.
-4. **Place it.** Put the item into the Backlog by priority. Propose This week only when the work is needed this week. When the item comes from a raw capture, replace that raw line.
+4. **Place it.** Put the item into the Backlog by priority. Propose This week when the work is needed this week, which includes every item that is due this week or already overdue. When the item comes from a raw capture, replace that raw line.
 5. **Raw capture.** When a calling skill passes a line in the user's own words, write `- [ ] <the user's words>` at the top of the Backlog. Skip steps 1 to 4. `## Groom` turns it into an item later.
 
 ```

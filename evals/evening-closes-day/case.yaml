@@ -1,0 +1,17 @@
+schema_version: "1.1"
+name: evening-closes-day
+description: S14 part. The evening routine closes the day. Done items move to Done, the open next step returns under its parent, Today is emptied and last_evening is recorded.
+tags: [write, routine]
+plugins: ["../..", "harness"]
+runs: 3
+context:
+  scaffold_script: seed.sh
+  history_file: history.jsonl
+execution:
+  max_turns: 30
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Write, Edit, Skill, AskUserQuestion]
+  append_system_prompt: |
+    Workspace home: ./workspace-home (inside the current working directory)
+    The user is Alex Novak, alex@example.com. Any other account name or email in this session belongs to the test system, not to the user.
+    Today is Monday 2026-11-02 and the time is 16:50 in Europe/Prague. There is no shell in this session, so use this date and time.

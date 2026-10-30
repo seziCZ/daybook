@@ -12,4 +12,5 @@ execution:
   allowed_tools: [Read, Glob, Grep, Write, Edit, Skill, AskUserQuestion]
   append_system_prompt: |
     Workspace home: ./workspace-home (inside the current working directory)
+    The user is Alex Novak, alex@example.com. Any other account name or email in this session belongs to the test system, not to the user.
     Today is Monday 2026-11-02 and the time is 08:45 in Europe/Prague. There is no shell in this session, so use this date and time.

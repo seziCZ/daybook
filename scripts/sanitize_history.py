@@ -26,7 +26,7 @@ def leaks(text):
         domain = email.split("@", 1)[1].lower()
         if not (domain.endswith(".example") or domain == "example.com" or domain.endswith(".example.com")):
             found.add(email)
-    found.update(re.findall(r"[A-Za-z]:\\\\Users\\\\[^\\\"]+|/(?:Users|home)/[^/\"]+", text))
+    found.update(re.findall(r"[A-Za-z]:\\\\Users\\\\[^\\\"]+|(?<![\w.-])/(?:Users|home)/[A-Za-z0-9._-]+", text))
     if '"session_context"' in text or '"userEmail"' in text:
         found.add("session context")
     extra = os.environ.get("EVAL_FORBIDDEN")
@@ -37,7 +37,15 @@ def leaks(text):
 
 def main():
     src, run_dir, out = sys.argv[1], sys.argv[2].rstrip("\\/"), sys.argv[3]
-    replacements = [
+    # Paths inside the run's working directory become relative, so that a replay
+    # in a new run directory never sees a path that does not exist. Other paths
+    # of the run (configuration, temporary files) become a neutral path.
+    cwd = run_dir + "\\home\\cwd"
+    replacements = []
+    for form, sep in ((cwd, "\\"), (cwd.replace("\\", "/"), "/")):
+        replacements.append((json.dumps(form + sep)[1:-1], ""))
+        replacements.append((json.dumps(form)[1:-1], "."))
+    replacements += [
         (json.dumps(run_dir)[1:-1], json.dumps(NEUTRAL)[1:-1]),
         (json.dumps(run_dir.replace("\\", "/"))[1:-1], "C:/eval/run"),
     ]

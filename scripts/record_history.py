@@ -43,6 +43,7 @@ def record(name):
     (probe / "graders" / "ran.md").write_text("---\ntype: tool_used\ntool: Read\n---\n", encoding="utf-8", newline="\n")
 
     out = Path(tempfile.mkdtemp()) / "record.json"
+    run_dir = None
     try:
         subprocess.run(
             ["claude", "plugin", "eval", ".", "--case", probe.name, "--runs", "1", "--ablation", "none",
@@ -50,20 +51,30 @@ def record(name):
              "--no-publish", "--keep-temp", "--json", str(out)],
             cwd=ROOT, check=False, shell=sys.platform == "win32")
         run = json.loads(out.read_text(encoding="utf-8"))["cases"][0]["arms"]["with"][0]
+        if run.get("tracePath"):
+            run_dir = Path(run["tracePath"]).parent.parent
         if run.get("error"):
             sys.exit(f"{name}: the first turn failed: {run['error']}")
-        run_dir = Path(run["tracePath"]).parent.parent
         sessions = list((run_dir / "config" / "projects").glob("*/*.jsonl"))
         if len(sessions) != 1:
             sys.exit(f"{name}: expected one recorded session in {run_dir}, found {len(sessions)}")
         subprocess.run(
             [sys.executable, "-I", "-B", str(ROOT / "scripts" / "sanitize_history.py"),
              str(sessions[0]), str(run_dir), str(case / "history.jsonl")], check=True)
-        shutil.rmtree(run_dir, ignore_errors=True)
     finally:
+        # The run folder holds the raw session with account data, so it never stays.
+        if run_dir:
+            shutil.rmtree(run_dir, ignore_errors=True)
         shutil.rmtree(probe, ignore_errors=True)
         shutil.rmtree(out.parent, ignore_errors=True)
 
 
+failed = []
 for case_name in sys.argv[1:] or sys.exit(__doc__):
-    record(case_name)
+    try:
+        record(case_name)
+    except (SystemExit, subprocess.CalledProcessError) as e:
+        print(f"{case_name}: not recorded: {e}", file=sys.stderr)
+        failed.append(case_name)
+if failed:
+    sys.exit(f"not recorded: {', '.join(failed)}")

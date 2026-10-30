@@ -124,7 +124,15 @@ for case in sorted(p for p in evals.iterdir() if (p / "case.yaml").exists()):
     if not graders:
         problem(case, "has no graders")
     negative_only = "trigger" in re.search(r"^tags: \[(.*)\]", yaml, re.M).group(1)
-    if not negative_only and not any("type: tool_used" in read(g) and not re.search(r"^min: 0", read(g), re.M) for g in graders):
+    approval = "history_file:" in yaml
+    if approval:
+        # The written files prove that the skill acted, whichever write tool it chose.
+        file_check = any("source: file" in read(g) and "not_contains" not in read(g) for g in graders)
+        mock_write = any(re.search(r"^tool: mcp__", read(g), re.M) and not re.search(r"^max: 0", read(g), re.M)
+                         for g in graders)
+        if not (file_check or mock_write):
+            problem(case, "an approval case needs a positive check on a written file or a mocked write call")
+    elif not negative_only and not any("type: tool_used" in read(g) and not re.search(r"^min: 0", read(g), re.M) for g in graders):
         problem(case, "has no control grader (tool_used that must be called)")
     for g in graders:
         if "target: mock_calls" in read(g):
