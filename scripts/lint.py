@@ -130,8 +130,9 @@ for case in sorted(p for p in evals.iterdir() if (p / "case.yaml").exists()):
         file_check = any("source: file" in read(g) and "not_contains" not in read(g) for g in graders)
         mock_write = any(re.search(r"^tool: mcp__", read(g), re.M) and not re.search(r"^max: 0", read(g), re.M)
                          for g in graders)
-        if not (file_check or mock_write):
-            problem(case, "an approval case needs a positive check on a written file or a mocked write call")
+        judged = any("type: llm" in read(g) for g in graders)
+        if not (file_check or mock_write or judged):
+            problem(case, "an approval case needs a positive check: a written file, a mocked write call or an llm grader")
     elif not negative_only and not any("type: tool_used" in read(g) and not re.search(r"^min: 0", read(g), re.M) for g in graders):
         problem(case, "has no control grader (tool_used that must be called)")
     for g in graders:

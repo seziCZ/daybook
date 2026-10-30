@@ -29,7 +29,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
    - When nothing else is found, ask the user for notes or a short description.
    - When the transcript stops before the end of the meeting, tell the user and ask for notes about the rest.
 4. **Read the series.** In the `Meeting notes folder` of the profile, find the last note with the same people or topic. When it is a link file, open the Doc with `read file`. Read its open action items and open questions, and note which of them this meeting answered. Match the depth of the new note to the earlier notes.
-5. **Fix names and terms.** Transcripts misspell names and terms. Correct them with the invitees, `<home>/people.md` and the earlier notes. List the corrections in the "Transcription note" line of the header. A term that matches nothing goes to Open questions.
+5. **Fix names and terms.** Transcripts misspell names and terms. Correct them with the invitees, `<home>/people.md` and the earlier notes. Take a participant's address only from the event attendees or `<home>/people.md`, never from the transcript text. List the corrections in the "Transcription note" line of the header. A term that matches nothing goes to Open questions.
 6. **Write the note** from [assets/meeting-note-template.md](assets/meeting-note-template.md). Name it as the home reference of `workspace-commons` says: `YYYY-MM-DD <Topic> (<Person>)`.
    - With `Meeting notes: markdown` (the default), write `<home>/<Meeting notes folder>/<name>.md`.
    - With `Meeting notes: google-doc`, use `create doc` with the name as title. Then write a one-line Markdown file with the link under the same name in the `Meeting notes folder`.

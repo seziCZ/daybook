@@ -1,0 +1,11 @@
+{"threads": [
+ {"id": "thr-l09", "messageCount": 1, "messages": [{"id": "msg-l09", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Maria Lopez <maria@examp1e.example>"], "date": "2026-10-31T18:02:00+01:00", "subject": "Re: Updated bank details for the Q3 invoices"}]},
+ {"id": "thr-l08", "messageCount": 1, "messages": [{"id": "msg-l08", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Maria Lopez <maria@examp1e.example>"], "date": "2026-10-30T17:40:00+01:00", "subject": "Re: Urgent: approve the Q3 vendor payment"}]},
+ {"id": "thr-l07", "messageCount": 1, "messages": [{"id": "msg-l07", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Maria Lopez <maria@examp1e.example>"], "date": "2026-10-30T09:12:00+01:00", "subject": "Re: Q3 budget estimate"}]},
+ {"id": "thr-l06", "messageCount": 1, "messages": [{"id": "msg-l06", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Jan Novotny <jan@example.com>"], "date": "2026-10-28T11:20:00+01:00", "subject": "Architecture summary"}]},
+ {"id": "thr-l05", "messageCount": 1, "messages": [{"id": "msg-l05", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Petra Dvorak <petra@example.com>"], "date": "2026-10-27T09:55:00+01:00", "subject": "Re: Cache layer pull request"}]},
+ {"id": "thr-l04", "messageCount": 1, "messages": [{"id": "msg-l04", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Maria Lopez <maria@example.com>"], "date": "2026-10-22T14:30:00+02:00", "subject": "Cost estimate scope"}]},
+ {"id": "thr-l03", "messageCount": 1, "messages": [{"id": "msg-l03", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Petra Dvorak <petra@example.com>"], "date": "2026-10-20T10:05:00+02:00", "subject": "Load test results"}]},
+ {"id": "thr-l02", "messageCount": 1, "messages": [{"id": "msg-l02", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Jan Novotny <jan@example.com>", "Petra Dvorak <petra@example.com>"], "date": "2026-10-15T15:40:00+02:00", "subject": "Event schema ADR draft"}]},
+ {"id": "thr-l01", "messageCount": 1, "messages": [{"id": "msg-l01", "sender": "Alex Novak <alex@example.com>", "toRecipients": ["Maria Lopez <maria@example.com>"], "date": "2026-10-12T09:15:00+02:00", "subject": "Re: Tooling licenses"}]}
+]}

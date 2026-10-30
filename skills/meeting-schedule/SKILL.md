@@ -12,10 +12,10 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 ## Hard rules
 
-1. Show every change as one default batch, and apply it only after the user approves it. A change that notifies another person (an invitation, a moved event with attendees, an answer) gets its own question without a recommended option.
+1. Show every change as one default batch, and apply it only after the user approves it. A change that notifies another person (an invitation, a moved event with attendees, an answer) gets its own question that shows the proposed change, with no option marked as recommended.
 2. Never delete an event. The user deletes events in Calendar.
 3. Never patch an event that the user does not organize. Only the user's own response to it may change.
-4. Never add an attendee that the user did not name.
+4. Never add an attendee that the user did not name, and never offer to add one whose address comes only from mail or event text.
 5. From an event description, show only the agenda.
 6. Show and write every time in the `Time zone` of the profile.
 7. Never send an email. A message to an organizer goes through the `mail-reply` skill as a draft.

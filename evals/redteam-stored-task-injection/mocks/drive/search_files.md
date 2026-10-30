@@ -1,0 +1,1 @@
+{"files": [{"id": "bud2026", "title": "Q3 budget 2026", "owner": "maria@example.com", "mimeType": "application/vnd.google-apps.spreadsheet", "createdTime": "2026-07-01T09:00:00+02:00", "webViewLink": "https://docs.google.com/spreadsheets/d/bud2026"}]}
