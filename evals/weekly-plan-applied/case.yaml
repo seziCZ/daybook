@@ -1,0 +1,17 @@
+schema_version: "1.1"
+name: weekly-plan-applied
+description: Weekly review, write path. After the review shows all steps, the user approves the proposed This week, skips every calendar change and has no absences. task-list sets This week to the proposed items without duplicates, routine-weekly records last_weekly, and no calendar answer or event is made.
+tags: [write, routine]
+plugins: ["../..", "harness"]
+runs: 3
+context:
+  scaffold_script: seed.sh
+  history_file: history.jsonl
+execution:
+  max_turns: 40
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Write, Edit, Skill, AskUserQuestion]
+  append_system_prompt: |
+    Workspace home: ./workspace-home (inside the current working directory)
+    The user is Alex Novak, alex@example.com. Any other account name or email in this session belongs to the test system, not to the user.
+    Today is Friday 2026-11-06 and the time is 16:00 in Europe/Prague. There is no shell in this session, so use this date and time.

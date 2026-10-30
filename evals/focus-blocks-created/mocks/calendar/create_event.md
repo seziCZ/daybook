@@ -1,0 +1,1 @@
+{"id": "evt-focus-{{input.startTime}}", "summary": "{{input.summary}}", "status": "confirmed", "start": {"dateTime": "{{input.startTime}}", "timeZone": "Europe/Prague"}, "end": {"dateTime": "{{input.endTime}}", "timeZone": "Europe/Prague"}, "organizer": {"email": "alex@example.com", "self": true}}

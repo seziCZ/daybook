@@ -42,7 +42,7 @@ Ask with the agent's question tool when it has one (`AskUserQuestion` in Claude 
 
 A **default batch** is a numbered list of proposed changes with the options "Apply all (Recommended)", "Let me choose" and "Skip". After "Let me choose", ask a checkbox question when the list has at most 4 items. With more items, ask the user to type the numbers to keep or to skip, for example "skip 2 and 5". Without a question tool, show the numbered list and accept an answer in the user's own words.
 
-Two kinds of change never go into a default batch. Each gets its own question without a recommended option: a change that notifies another person (an invitation, an answer to an invitation), and a new or changed Email address in `people.md`.
+Two kinds of change never go into a default batch: a change that notifies another person (an invitation, an answer to an invitation), and a new or changed Email address in `people.md`. Each gets its own question. The question still shows the proposed change and its reason, but no option is marked as recommended, so the user chooses actively.
 
 ## Sessions
 

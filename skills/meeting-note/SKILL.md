@@ -1,6 +1,6 @@
 ---
 name: meeting-note
-description: Writes one meeting note from a Google Meet transcript, the user's own notes, a whiteboard photo or a short description, then proposes the follow-ups (tasks, waiting items, people, a recap draft). Use when the user says "write up the meeting", "meeting notes from this transcript", pastes a .vtt file, or runs /meeting-note.
+description: Writes one meeting note from a Google Meet transcript, the user's own notes, a whiteboard photo or a short description, then proposes the follow-ups (tasks, waiting items, people, a recap draft). Use when the user tells or pastes what happened in a meeting and wants it recorded, says "write up the meeting" or "meeting notes from this transcript", pastes a .vtt file, or runs /meeting-note.
 license: Apache-2.0
 ---
 

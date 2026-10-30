@@ -1,6 +1,6 @@
 ---
 name: workspace-search
-description: Answers one question from the home folder, Gmail, Google Calendar and Google Drive, with the source of each fact. Read only. Use when the user says "find", "when did Maria say", "where is the Q3 plan", "what did we decide about", or runs /workspace-search with a question, optionally with a source first, such as "Drive for the Q3 plan".
+description: Answers one question about past mail, meetings, files or notes from the home folder, Gmail, Google Calendar and Google Drive, with the source of each fact. Read only. Use when the user asks to find something, or when, where or what someone said, sent, decided or mentioned, even about one source such as an email, or names a source first, such as "Drive for the Q3 plan".
 license: Apache-2.0
 ---
 

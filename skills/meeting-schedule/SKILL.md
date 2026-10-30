@@ -54,7 +54,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
    4. It is outside working time, or on an absence day or a public holiday: decline.
    5. It has no agenda: tentative.
    6. Otherwise: accept.
-3. **Ask for each answer.** Ask each answer as its own question without a recommended option, in one call when possible. The question names the organizer and says that Google sends the answer to them.
+3. **Ask for each answer.** Ask each answer as its own question, in one call when possible. The question shows the proposed answer and its reason, names the organizer, and says that Google sends the answer to them. No option is marked as recommended.
 4. **Add a note to a decline.** Offer one short, polite sentence, for example "I have a conflict at this time. Could we find another slot?" When `respond to event` cannot carry a note, offer the note as a draft through the `mail-reply` skill.
 5. **Apply the answers.** Use `respond to event` after the approval.
 
