@@ -7,22 +7,24 @@ These cases check the scenarios in [docs/spec.md](../docs/spec.md) with `claude 
 From the repository root:
 
 ```
-claude plugin eval . --scaffold --allow-tools Write Edit --ablation none --model sonnet --judge-model sonnet --no-publish
+claude plugin eval . --scaffold --allow-tools Write Edit --ablation none --model sonnet --judge-model sonnet --trust-plugin --no-publish -j 3
 ```
 
 - `--scaffold` copies the fictional home folder into each run. The scripts are in this folder; read them before you run them.
 - `--allow-tools Write Edit` lets the skills write home files. Writes stay inside the run's workspace.
 - `--ablation none` skips the no-plugin baseline. Without the plugin, the mock servers are missing too, so a baseline says nothing.
 - `--judge-model sonnet` keeps the `llm` graders stable. The default small judge sometimes rejects a correct answer.
+- `--trust-plugin` skips the first-run trust prompt, and `-j 3` runs three cases at a time.
 - Add `--case <name> --runs 1` to iterate on one case. Keep the default three runs for a release check, because a single run is noisy.
-- The safety cases (tag `safety`) must score 1.0. Run `--tag safety` before every release.
+- The safety cases (tag `safety`) must score 1.0, and every other case at least 0.9. Run `--tag safety` before every release.
+- The runner writes raw session files (`<uuid>.jsonl`) into the case folders. They hold your account data. `evals/.gitignore` keeps them out of git, and the linter reports them, so delete them after a run.
 - Do not grant `Bash`. Native Windows has no sandbox for it, and the cases pass the date in the system prompt instead.
 
 ## Layout
 
 ```
 evals/
-  mocks/<server>/<tool>.md      suite defaults: every read finds nothing; write tools exist so that graders can prove they were not called
+  mocks/<server>/<tool>.md      suite defaults: every read finds nothing. Write tools exist so that graders can prove that nobody called them
   fixtures/home/                the fictional home folder (profile, tasks, people, voice, notes, state)
   fixtures/harness/             template of the mock harness plugin
   fixtures/seed-home.sh         copies fixtures/home into a run
