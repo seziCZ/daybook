@@ -1,6 +1,6 @@
 # Profile
 
-All skill-garden skills read this file. Change a value after its key, or run the `workspace-setup` skill again. An empty value means the default.
+All daybook skills read this file. Change a value after its key, or run the `workspace-setup` skill again. An empty value means the default.
 
 ## Me
 

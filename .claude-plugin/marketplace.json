@@ -1,12 +1,12 @@
 {
-  "name": "skill-garden",
+  "name": "daybook",
   "description": "Google Workspace productivity skills: routines, one task list, meetings and mail. Safe by default.",
   "owner": {
     "name": "Tomas Sezima"
   },
   "plugins": [
     {
-      "name": "skill-garden",
+      "name": "daybook",
       "source": "./",
       "description": "Productivity skills for Google Workspace: routines, tasks, meetings and mail."
     }

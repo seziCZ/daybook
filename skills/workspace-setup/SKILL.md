@@ -1,12 +1,12 @@
 ---
 name: workspace-setup
-description: Creates the skill-garden home folder with the profile, task list, people and voice files. Fills the profile from the user's calendar and sent mail, and asks only a few short questions. Checks and repairs an existing home. Use when the user says "set up skill-garden" or "set up my workspace home", or when another skill finds no home or no profile.
+description: Creates the daybook home folder with the profile, task list, people and voice files. Fills the profile from the user's calendar and sent mail, and asks only a few short questions. Checks and repairs an existing home. Use when the user says "set up daybook" or "set up my workspace home", or when another skill finds no home or no profile.
 license: Apache-2.0
 ---
 
 # Workspace setup
 
-This skill creates the home folder that all skill-garden skills read: the profile, the task list, people and terms, and the voice file. It guesses what it can from the calendar and sent mail, and asks only a few questions. Run it once at the start, and again at any time to check and repair the home.
+This skill creates the home folder that all daybook skills read: the profile, the task list, people and terms, and the voice file. It guesses what it can from the calendar and sent mail, and asks only a few questions. Run it once at the start, and again at any time to check and repair the home.
 
 Start by reading the `workspace-commons` skill and, when it exists, `<home>/profile.md`.
 

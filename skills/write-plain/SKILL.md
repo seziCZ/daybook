@@ -1,12 +1,12 @@
 ---
 name: write-plain
-description: Holds the rules for plain, short international English and rewrites or checks a text against them, so that busy and non-native readers understand it on the first read. Use when the user says "make it plainer", asks to simplify, shorten or clarify a text, asks whether others will understand it, or asks to check their English, and for the text that the skill-garden skills write.
+description: Holds the rules for plain, short international English and rewrites or checks a text against them, so that busy and non-native readers understand it on the first read. Use when the user says "make it plainer", asks to simplify, shorten or clarify a text, asks whether others will understand it, or asks to check their English, and for the text that the daybook skills write.
 license: Apache-2.0
 ---
 
 # Write plain
 
-These rules make a text easy to read for busy people and for readers whose first language is not English. Follow them for the text that the skill-garden skills write: notes, tasks, mail drafts and replies. When the user asks to simplify or check a text, follow `## Check a text`.
+These rules make a text easy to read for busy people and for readers whose first language is not English. Follow them for the text that the daybook skills write: notes, tasks, mail drafts and replies. When the user asks to simplify or check a text, follow `## Check a text`.
 
 The skill needs no home folder and no profile. The rules are for English. In another language, keep the dash rule and the steps of `## Write a text`. When the `write-voice` skill is installed and the text goes out under the user's name, the voice decides greetings, sign-offs and tone. These rules decide the sentences.
 

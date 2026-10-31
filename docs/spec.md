@@ -1,4 +1,4 @@
-# skill-garden specification
+# daybook specification
 
 This document states what the skills must do, what they must never do, and how we check both. The contract details (file formats, capabilities, who writes what) live in the `workspace-commons` skill and its references.
 

@@ -1,12 +1,12 @@
 ---
 name: workspace-commons
-description: Shared rules of the skill-garden productivity skills. Defines the home folder with the user's data, which tools to use for Gmail, Google Calendar and Google Drive, how to ask the user, and who may write what. Use when another skill-garden skill says to read it first, or when the user asks how these skills handle their data and safety.
+description: Shared rules of the daybook productivity skills. Defines the home folder with the user's data, which tools to use for Gmail, Google Calendar and Google Drive, how to ask the user, and who may write what. Use when another daybook skill says to read it first, or when the user asks how these skills handle their data and safety.
 license: Apache-2.0
 ---
 
 # Workspace commons
 
-The skill-garden skills help one person run their working day with Google Workspace: mail, calendar, files, a task list and meeting notes. This skill holds the rules that all of them follow. Every other skill reads it first.
+The daybook skills help one person run their working day with Google Workspace: mail, calendar, files, a task list and meeting notes. This skill holds the rules that all of them follow. Every other skill reads it first.
 
 ## Hard rules
 
