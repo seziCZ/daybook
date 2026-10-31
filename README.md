@@ -2,7 +2,7 @@
 
 Agent skills that help one person run their working day with Google Workspace: a morning and an evening routine, a weekly review, one task list, meeting preparation and notes, mail triage and reply drafts.
 
-The skills work with any agent that reads Agent Skills (`SKILL.md`), such as Claude Code, Codex, Cursor and Gemini CLI.
+The skills work with any agent that reads Agent Skills (`SKILL.md`), such as Claude Code, Codex, Cursor and Gemini CLI. In Claude, use Sonnet or Opus. Haiku often answers without loading the skills, so it is not recommended (see [docs/eval-baseline.md](docs/eval-baseline.md)).
 
 ## Safe by default
 
@@ -17,17 +17,24 @@ The skills work with any agent that reads Agent Skills (`SKILL.md`), such as Cla
 Claude Code:
 
 ```
-claude plugin marketplace add <owner>/skill-garden
+claude plugin marketplace add seziCZ/skill-garden
 claude plugin install skill-garden@skill-garden
 ```
 
 Other agents:
 
 ```
-npx skills add <owner>/skill-garden
+npx skills add seziCZ/skill-garden
 ```
 
-Then run the `workspace-setup` skill. It creates your home folder, learns your working hours from your calendar, and asks a few questions.
+Then say "set up skill-garden" to your agent (or run `/workspace-setup` in Claude Code). It creates your home folder, a folder of plain Markdown files on your computer, learns your working hours from your calendar, and asks a few questions.
+
+After that, talk to your agent as usual, for example:
+
+- "Start my day."
+- "Reply to Maria that the budget draft comes on Friday."
+- "Prepare me for my 1-on-1 with Petra."
+- "Write up the meeting from this transcript."
 
 ## Google access
 
@@ -47,7 +54,7 @@ The skills use the first of these that works:
 | routine | `routine-morning` | Inbox hints, capture, and the plan of the day around your meetings. |
 | | `routine-evening` | Closes the working day in a few minutes, so that work stays at work. |
 | | `routine-weekly` | Reviews the week and plans the next one. |
-| task | `task-list` | Keeps your one task list: capture, complete, groom, query. |
+| task | `task-list` | Keeps your one task list: capture, complete, tidy, query. |
 | mail | `mail-triage` | Shows which threads need your action, with a proposed outcome. |
 | | `mail-reply` | Drafts a reply in your voice into Gmail drafts. |
 | | `mail-follow-up` | Finds your promises and the answers you still wait for. |

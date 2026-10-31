@@ -25,7 +25,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 - **Working time:** from `Day start` to `Day end` on working days, as `workspace-commons` defines them.
 - **Busy time and focus blocks:** as `workspace-commons` defines them.
 - **Period:** the one that the user or the calling skill names. The default is today to the last working day of next week.
-- **Caller:** when another skill calls a section, it passes the period and the items. When the caller passes changes that the user already approved, apply them without asking again. Otherwise ask only what is still open, then ask for the approval.
+- **Caller:** when another skill calls a section, it passes the period and the items. When the caller passes changes that the user already approved, apply them without asking again. A change that notifies someone counts as approved only when the user approved it in its own question. Otherwise ask only what is still open, then ask for the approval.
 - **Attendees:** take their emails from `<home>/people.md`, or ask the user. After approval, add a new person to `<home>/people.md`. A new Email gets its own question.
 - **No calendar tool:** use the fallback of `find free time`. Ask for the user's own free slots, and write the proposed slots as text that the user sends. Show each other change, and the user makes it in Calendar.
 
@@ -48,7 +48,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 1. **List the open invitations.** Use `list events` for the period and keep the events that the user has not answered. Show a recurring series once, and say whether the answer is for the series or for one event.
 2. **Propose an answer.** The first rule that applies sets the proposal, with a one-line reason:
-   1. The organizer is not in `<home>/people.md` and not in the domain of `Email`: no answer (skip).
+   1. The organizer's address is not in the Email column of `<home>/people.md` and not in the domain of `Email`: no answer (skip).
    2. A decision about this meeting in `## Decisions` of `<home>/state/routine.md`.
    3. It overlaps an event that the user accepted or organizes: decline.
    4. It is outside working time, or on an absence day or a public holiday: decline.
@@ -60,11 +60,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 ## Move an event
 
-1. **Find the event.** Use `search events` or `list events`, and confirm the event with the user when more than one matches.
-2. **Check the organizer.** When the organizer is not the user's `Email`, do not move the event. Propose an answer through `## Answer invitations`, or offer a message to the organizer through the `mail-reply` skill.
-3. **Find a new time.** Follow steps 2 and 3 of "Find a time" with the attendees of the event.
-4. **Ask for the choice.** Show the old and the new time. Say that Google tells the attendees about the change.
-5. **Update the event.** Use `update event` after the answer.
+Find the event with `search events` or `list events`, and confirm it when more than one matches. Move it only when the user organizes it (rule 3). Otherwise propose an answer through `## Answer invitations`, or a message to the organizer through the `mail-reply` skill. Find a new time with steps 2 and 3 of `## Find a time`. Ask with the old and the new time, and say that Google tells the attendees about the change. Then use `update event`.
 
 ## Closing
 

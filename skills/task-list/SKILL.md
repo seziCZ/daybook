@@ -12,7 +12,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 ## Hard rules
 
-1. Show the proposed changes as a default batch, and write them after the answer. When a calling skill passes changes that the user approved, write them without asking again.
+1. Show the proposed changes as a default batch, and write them after the answer. Then say in one line what changed, for example "Added 2 tasks to the Backlog and moved 1 to Done."
 2. Never delete an item. A finished item moves to Done with `done:`, an unneeded one with `dropped:`.
 3. Every item except a raw capture has a size. Propose the size, and never ask for it.
 4. Change This week, reorder the Backlog, or fill Today only after the user confirms it.
@@ -26,7 +26,7 @@ The file and item format is the `tasks.md` section of the home reference in the 
 2. **Write the item.** Start the action with a verb and name the result. Add a tag from `Task tags` of the profile when one fits. Propose the size from the text. Add `due:` only when the user or the source names a date. A waiting item gets `waiting:<Name> since:<the date the caller passes, otherwise today>`. When a note in the `Meeting notes folder` of the profile matches by keyword, add a link to it.
 3. **Skip duplicates.** A duplicate is defined in the `tasks.md` section of the home reference. Say so, and skip it.
 4. **Place it.** Put the item into the Backlog by priority. Propose This week when the work is needed this week, which includes every item that is due this week or already overdue. When the item comes from a raw capture, replace that raw line.
-5. **Raw capture.** When a calling skill passes a line in the user's own words, write `- [ ] <the user's words>` at the top of the Backlog. Skip steps 1 to 4. `## Groom` turns it into an item later.
+5. **Raw capture.** When a calling skill passes a line that the user typed in this session, write `- [ ] <the user's words>` at the top of the Backlog. Skip steps 1 to 4. `## Groom` turns it into an item later.
 
 ```
 - [ ] call the bank about the new card
@@ -44,15 +44,11 @@ The file and item format is the `tasks.md` section of the home reference in the 
 
 ## Plan today
 
-The `routine-morning` skill passes a plan that the user has already approved, so do not ask again.
-
 1. **Check.** When Today holds a plan with an earlier date, stop and tell the calling skill to close that day first.
 2. **First line.** Write `Plan YYYY-MM-DD: end HH:MM, free HH:MM to HH:MM, HH:MM to HH:MM.` with today's date and the times of the plan.
 3. **Items.** Move each planned item from This week or the Backlog into Today, in the order of the plan. Write `- [ ] HH:MM <item>` where a time matters, otherwise `- [ ] <item>`. For a `larger` item, move only its next step, and add `(step of: <parent action>)` to it.
 
 ## Plan week
-
-The `routine-weekly` skill passes the plan of the next week, which the user has already approved, so do not ask again.
 
 1. **Replace.** Write the planned items into This week, in the priority order of the plan. Move each one from This week or the Backlog, so that no item appears twice.
 2. **Carry over.** Keep unfinished items of the old This week that the plan names, with their priority. Return the others to the top of the Backlog in their old order.
@@ -79,6 +75,3 @@ A caller may limit Groom to the raw captures. Then run only step 2 (**Normalize*
 
 Answer with a short list filtered by tag, `waiting:`, `due:` or size. For example: "what is open on Hiring", "what am I waiting on from Maria", "what is due this week" or "what takes 15m". Show the section of each item. A query never changes the file.
 
-## Finish
-
-After each write, say in one line what changed, for example "Added 2 tasks to the Backlog and moved 1 to Done."

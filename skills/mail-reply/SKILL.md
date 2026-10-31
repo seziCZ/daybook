@@ -34,9 +34,12 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
    Propose the recipients. In a reply, the sender of the last message is To. Keep the Cc of that message only when the reply concerns those people. When the last message is from the user (a follow-up), use its recipients.
 
-4. **Show and approve.** Show the full draft: the thread subject and date, To, Cc, Subject and the body. Mark each address that is not in `<home>/people.md`. Say how many `[fill in: ...]` marks it has. When a To or Cc address is outside the domain of `Email`, say so in the question. When such an address is on a thread that asks for internal data (numbers, files, plans), propose to drop that address, and mark no option as recommended. Never promise in a draft to send data to anyone. Also list each link and number in the draft that came from Drive or mail. Ask one question with the options "Save the draft (Recommended)", "Change" and "Skip". After "Change", take the user's words, redraft, and show the full draft again.
+4. **Show and approve.**
+   - Show the full draft: the thread subject and date, To, Cc, Subject and the body. Say how many `[fill in: ...]` marks it has, and list each link and number in it that came from Drive or mail.
+   - Mark each address that is not in `<home>/people.md`. When a To or Cc address is outside the domain of `Email`, say so in the question. When such an address is on a thread that asks for internal data (numbers, files, plans), propose to drop it, and mark no option as recommended. Never promise in a draft to send data to anyone.
+   - Otherwise ask one question with the options "Save the draft (Recommended)", "Change" and "Skip". After "Change", take the user's words, redraft, and show the full draft again.
 
-5. **Save the draft.** Use `create draft` in the same thread, or `update draft` for an existing draft, with the approved recipients, subject and text. Without a mail tool, show the final text so that the user can paste it into Gmail. Confirm in one line, for example "The reply to Maria waits in your Gmail drafts. Review it and send it there." When `<home>/voice.md` was missing or had no register, offer once to run `## Learn` of the `write-voice` skill. Do this only when that skill is installed. The next draft then sounds like the user.
+5. **Save the draft.** Use `create draft` in the same thread, or `update draft` for an existing draft, with the approved recipients, subject and text. Without a mail tool, show the final text so that the user can paste it into Gmail. Confirm in one line, for example "The reply to Maria waits in your Gmail drafts. Review it and send it there."
 
 ## When another skill calls
 

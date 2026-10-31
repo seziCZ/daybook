@@ -23,7 +23,7 @@ Run the steps as in "Sessions" of the `workspace-commons` skill. When `last_morn
 
 1. **Close the previous day.** When `## Today` holds a plan with an earlier date, close that day. Run step 1 (**Tick the day**) of the `routine-evening` skill for that date. When `routine-evening` is not installed, run `## End of day` of the `task-list` skill instead. Otherwise skip this step. Then write `last_morning: <today>` in `<home>/state/routine.md`. When the file is missing, create it with the header in the home reference of the `workspace-commons` skill.
 
-2. **Inbox.** Get the Gmail hints of the `mail-triage` skill in `hints` mode, since the last working day. Without that skill, `search mail` with the `Inbox query` since the last working day. Keep up to `Hint limit` threads where someone asks the user for something and the user did not write the last message, newest first.
+2. **Inbox.** Get the Gmail hints of the `mail-triage` skill in `hints` mode, since the last working day.
    - When `Sources I check by hand` of the profile is empty, show the hints and the proposal in one message.
    - Otherwise ask for the hand-checked requests first. Name the sources, and ask the user to go through them now and to name each request that needs action in one short line. Never ask the user to paste content. "nothing" means no requests. Then send one proposal.
 

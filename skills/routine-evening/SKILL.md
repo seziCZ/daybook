@@ -29,7 +29,6 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`. Then rea
 
 2. **Write down open thoughts.** Ask one plain question: "What is still on your mind about work? For the one that occupies you most, also name the next concrete step."
    - Each line of the answer becomes one raw capture at the top of the Backlog, through `## Capture` of the `task-list` skill. Keep the user's own words. Add no tag, size or order.
-   - Write the line with the next step as `Next step: <step> (<topic>)`.
    - Skip a line that is already a raw capture in the Backlog.
    - When the user answers "nothing", end the step without a write.
 
@@ -48,4 +47,4 @@ Meetings: 09:30 Team standup, 14:00 Budget review with Maria.
 Which of these did you finish?
 ```
 
-The user ticks 2. In step 2 they write "the venue is still open, next step: call two venues in the morning". The skill captures `Next step: call two venues in the morning (team day venue)`. It closes with "Today you finished the budget draft and the onboarding checklist. The door is closed. See you on Monday, 2 November."
+The user ticks 2. In step 2 they write "the venue is still open, next step: call two venues in the morning". The skill captures that line in the user's words. It closes with "Today you finished the budget draft and the onboarding checklist. The door is closed. See you on Monday, 2 November."
