@@ -1,6 +1,6 @@
 schema_version: "1.1"
-name: trigger-meeting-assist-2
-description: Trigger. A natural request picks meeting-assist, not task-list.
+name: trigger-workspace-search-3
+description: Trigger. A question during a meeting picks workspace-search, not meeting-prep.
 tags: [trigger]
 plugins: ["../..", "harness"]
 runs: 3

@@ -1,6 +1,6 @@
 schema_version: "1.1"
 name: trigger-meeting-prep-1
-description: Trigger. A natural request picks meeting-prep, not meeting-assist.
+description: Trigger. A natural request picks meeting-prep, not workspace-search.
 tags: [trigger]
 plugins: ["../..", "harness"]
 runs: 3

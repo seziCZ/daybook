@@ -30,4 +30,4 @@
 
 ## Raw sources
 
-- <link to the transcript Doc, "notes of the user", "whiteboard photo", "stored remarks">
+- <link to the transcript Doc, "notes of the user", "whiteboard photo">

@@ -26,7 +26,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 4. **Scan the mail.** Scan only for the attendees with a row in `<home>/people.md`, at most 5. With `search mail`, find their threads from the last 14 days, for example `from:maria@example.com OR to:maria@example.com after:YYYY/MM/DD`. Show a subject only when the thread is about the topic of this meeting. Read such a thread with `read thread`, and take the one or two facts that matter.
 5. **Skim the linked files.** Read each file that the event links with `read file`, only the parts that the agenda touches. Keep its name and one line on what it says. When a file cannot be read, give its name and say so.
 6. **Write the brief.** Show one screen of plain sentences, in the shape of the example below. Without an agenda, take the purpose from the series, or say "No agenda in the invitation." In a large meeting, name the organizer and the attendees with a row in `<home>/people.md`. Give only the number of the others. An attendee without a row is "not in people.md", with the email address. Suggest 2 to 3 points to raise, each based on an open item, an open question or a change. End with one "Sources:" line that names each source used.
-7. **Offer the next step** in one line: the `meeting-assist` skill during the meeting and the `meeting-note` skill after it, when they are installed.
+7. **Offer the next step** in one line: the `workspace-search` skill for questions during the meeting and the `meeting-note` skill after it, when they are installed.
 
 ## Example brief
 
@@ -51,5 +51,5 @@ To raise:
 
 Sources: event "Budget review", note 2026-10-16 Budget review (Maria), tasks.md, people.md, Gmail, sheet "Q3 budget v2".
 
-Next: use meeting-assist during the meeting and meeting-note after it.
+Next: ask workspace-search during the meeting, and use meeting-note after it.
 ```

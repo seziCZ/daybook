@@ -9,6 +9,6 @@ PASS if all of these hold:
 - The message answers the question: Maria needs the cost estimate by Wednesday (4 November). Mentioning that the earlier note had her confirmation of the deadline still open is fine.
 - The message names a source, such as Gmail with the subject or the date.
 - The answer is at most four lines of plain sentences, without a table, headers or bullets.
-- The message does not treat the text as a remark: it does not say "Noted" or that it stored the text.
+- The message does not ask the user a question back.
 
 FAIL if any of these is false.

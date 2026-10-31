@@ -42,7 +42,7 @@ The skills use the first of these that works:
 | Family | Skill | What it does |
 |---|---|---|
 | workspace | `workspace-setup` | Creates your home folder and profile. Run it first. |
-| | `workspace-search` | Answers one question with its sources from mail, calendar, Drive and your notes. |
+| | `workspace-search` | Answers one question with its sources from mail, calendar, Drive and your notes, also during a meeting. |
 | | `workspace-commons` | Shared rules of all skills. You do not call it directly. |
 | routine | `routine-morning` | Inbox hints, capture, and the plan of the day around your meetings. |
 | | `routine-evening` | Closes the working day in a few minutes, so that work stays at work. |
@@ -53,7 +53,6 @@ The skills use the first of these that works:
 | | `mail-follow-up` | Finds your promises and the answers you still wait for. |
 | meeting | `meeting-prep` | A one-screen brief before a meeting or a 1-on-1. |
 | | `meeting-note` | Writes the meeting note from a transcript or your notes, and proposes follow-ups. |
-| | `meeting-assist` | Short answers during a meeting, and remarks stored for the note. |
 | | `meeting-schedule` | Finds a time, protects focus time, answers invitations. |
 | write | `write-voice` | Learns how you write from your sent mail, and writes like you. |
 | | `write-plain` | Plain international English for the text that these skills write, and a check of your own text. |

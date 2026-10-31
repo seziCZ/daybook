@@ -47,7 +47,7 @@ home_text = read(COMMONS_REF / "home.md")
 profile_keys = set(re.findall(r"^\| [A-Z][a-z]+(?: [a-z]+)* \| `([^`]+)` \|", home_text, re.M))
 profile_keys.add("Public holidays")
 home_files = {"profile.md", "tasks.md", "people.md", "voice.md", "notes", "state/routine.md",
-              "state/meeting-assist.md", "state/mail-follow-up.md", "state/<file>.md"}
+              "state/mail-follow-up.md", "state/<file>.md"}
 cap_verbs = ("search", "read", "list", "create", "update", "find", "respond", "recent")
 
 for name, text in skill_text.items():

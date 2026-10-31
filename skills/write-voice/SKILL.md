@@ -6,7 +6,7 @@ license: Apache-2.0
 
 # Write voice
 
-This skill makes text that the user sends under their own name sound like them. `## Learn` reads their sent mail once and proposes `<home>/voice.md`. `## Write` applies that voice to a mail, a chat message or a comment. Other skills, such as `mail-reply` and `meeting-assist`, call `## Write` before they show a text.
+This skill makes text that the user sends under their own name sound like them. `## Learn` reads their sent mail once and proposes `<home>/voice.md`. `## Write` applies that voice to a mail, a chat message or a comment. The `mail-reply` skill calls `## Write` before it shows a draft.
 
 Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 

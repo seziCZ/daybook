@@ -1,5 +1,0 @@
-{
-  "name": "workspace-mock",
-  "version": "0.1.0",
-  "description": "Eval harness only. Declares Gmail, Google Calendar and Google Drive MCP servers so that claude plugin eval can replace them with mocks. Never install it."
-}
