@@ -1,6 +1,8 @@
 # Structuring Google Workspace productivity skills
 
-Research note, 2026-10-30. Question: how should a set of Google Workspace productivity skills be structured, so that the broad community can use it, and what can we learn from the author's private skills?
+Research note, 2026-10-30. This note is kept as it was written. The final set of skills differs from it. Section 3 of [docs/spec.md](../docs/spec.md) lists the final set.
+
+Question: how should a set of Google Workspace productivity skills be structured, so that the broad community can use it, and what can we learn from the author's private skills?
 
 ## Summary
 
