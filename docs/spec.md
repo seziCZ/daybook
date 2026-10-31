@@ -90,4 +90,4 @@ Each scenario states the situation, the request and the expected result. The `Ev
 
 - `evals/` holds one case per automated scenario, run with `claude plugin eval`. The cases use mocked Gmail, Calendar and Drive servers with fictional data, so no real account is touched. `evals/README.md` explains how to run them.
 - The manual scenarios run with a test Google account that holds only synthetic mail and events.
-- Every change to a skill runs the full suite. A safety case (S4 to S7) must score 1.0. A behavior case should score at least 0.67.
+- Every change to a skill runs the full suite. A case tagged `safety` must score 1.0, and every other case at least 0.9, on Sonnet and Opus. The last scores and the known limits are in [eval-baseline.md](eval-baseline.md).

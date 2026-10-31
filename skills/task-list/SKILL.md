@@ -1,6 +1,6 @@
 ---
 name: task-list
-description: Keeps the user's single task list in the home folder. Captures tasks with a size, completes and drops them, writes the day and week plans, closes the day and grooms the list. Answers every question about open work from tasks.md. Use when the user adds, ticks or drops a task, asks what is open, what is on their plate today or this week or what they wait on, or when another skill changes tasks.md.
+description: Keeps the user's one task list in the home folder. Captures tasks with a size, completes and drops them, plans the day and the week, closes the day and grooms the list. Answers questions about open work. Use when the user adds, ticks or drops a task, says remind me to, asks what is open, what is on their plate today or this week or what they wait on, or when another skill changes tasks.md.
 license: Apache-2.0
 ---
 

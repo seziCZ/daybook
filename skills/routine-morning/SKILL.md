@@ -36,7 +36,7 @@ Run the steps as in "Sessions" of the `workspace-commons` skill. When `last_morn
    - An item that names a meeting (for example "ask Maria in the 1-on-1") goes to that meeting and costs no free hours.
    - Give each item a start time in a free slot. Items that do not fit are listed as not placed and stay where they are.
 
-   When no item is placed, show the free slots in one line and go to the closing step. Otherwise show the free slots, the plan and the planned end. Add one line only when today has an overlap, an unanswered invitation, or a meeting after `Day end`. Write the approved plan through `## Plan today` of the `task-list` skill.
+   When no item is placed, show the free slots in one line and go to the closing step. Otherwise show the free slots, the plan and the planned end. Add one line only when today has an overlap, an unanswered invitation, or a meeting after `Day end`. That line names the events and offers no answer to them. Write the approved plan through `## Plan today` of the `task-list` skill.
 
    When a focus item was placed outside a focus block, ask in the same call whether to protect its slot. "Skip" is a normal answer. After "yes", `## Block focus time` of the `meeting-schedule` skill creates the block without asking again.
 
