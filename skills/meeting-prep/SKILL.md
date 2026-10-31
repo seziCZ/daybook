@@ -20,13 +20,13 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 ## Steps
 
-1. **Find the meeting.** Read the date and the time from the shell. Without a name, take the meeting (as `workspace-commons` defines it) that runs now or starts next today, with `list events`. When the user names a meeting, a person or a time, find the event with `search events`. When two events match, ask which one. When none matches, say so and ask for the title. Read the event with `read event`, and take the title, the time, the attendees, the agenda from the description, and the linked files.
-2. **Read the series.** In the `Meeting notes folder` of the profile, find the last note with the same person or topic. Note names are `YYYY-MM-DD <Topic> (<Person>).md`. When the note holds only a link to a Google Doc, read the Doc with `read file`. Take its date, its open action items and its open questions. The date of that note is "last time". Without an earlier note, say "First meeting in the notes."
+1. **Find the meeting.** Without a name, take the meeting (as `workspace-commons` defines it) that runs now or starts next today, with `list events`. When the user names a meeting, a person or a time, find the event with `search events`. When two events match, ask which one. When none matches, say so and ask for the title. Read the event with `read event`, and take the title, the time, the attendees, the agenda from the description, and the linked files.
+2. **Read the series.** List the files of the `Meeting notes folder` of the profile, which is relative to the home (by default `<home>/notes/meetings/`). Find the last note with the same person or topic. Note names are `YYYY-MM-DD <Topic> (<Person>).md`. When the note holds only a link to a Google Doc, read the Doc with `read file`. Take its date, its open action items and its open questions. The date of that note is "last time". Without an earlier note, say "First meeting in the notes."
 3. **Read the home.** In `<home>/tasks.md`, take the open items that name an attendee. An item with `waiting:<Name>` is owed to the user. An item whose action is for that person is owed by the user. Also take the items in `## Done` that name an attendee and were finished since last time. In `<home>/people.md`, take the rows of the attendees, only the columns `Name` and `Who they are`.
 4. **Scan the mail.** Scan only for the attendees with a row in `<home>/people.md`, at most 5. With `search mail`, find their threads from the last 14 days, for example `from:maria@example.com OR to:maria@example.com after:YYYY/MM/DD`. Show a subject only when the thread is about the topic of this meeting. Read such a thread with `read thread`, and take the one or two facts that matter.
-5. **Skim the linked files.** Read each file that the event links with `read file`, only the parts that the agenda touches. Keep its name and one line on what it says. When a file cannot be read, give its name and say so.
+5. **Skim the linked files.** Read each Google file that the event links with `read file`, only the parts that the agenda touches. Keep its name and one line on what it says. When a file cannot be read, give its name and say so.
 6. **Write the brief.** Show one screen of plain sentences, in the shape of the example below. Without an agenda, take the purpose from the series, or say "No agenda in the invitation." In a large meeting, name the organizer and the attendees with a row in `<home>/people.md`. Give only the number of the others. An attendee without a row is "not in people.md", with the email address. Suggest 2 to 3 points to raise, each based on an open item, an open question or a change. End with one "Sources:" line that names each source used.
-7. **Offer the next step** in one line: the `meeting-assist` skill during the meeting and the `meeting-note` skill after it, when they are installed.
+7. **Offer the next step** in one line: the `workspace-search` skill for questions during the meeting and the `meeting-note` skill after it, when they are installed.
 
 ## Example brief
 
@@ -51,5 +51,5 @@ To raise:
 
 Sources: event "Budget review", note 2026-10-16 Budget review (Maria), tasks.md, people.md, Gmail, sheet "Q3 budget v2".
 
-Next: use meeting-assist during the meeting and meeting-note after it.
+Next: ask workspace-search during the meeting, and use meeting-note after it.
 ```

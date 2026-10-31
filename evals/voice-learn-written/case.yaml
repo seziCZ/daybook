@@ -1,0 +1,17 @@
+schema_version: "1.1"
+name: voice-learn-written
+description: Write path of write-voice Learn. From sent mail in two registers, the skill proposes voice.md, and after approval writes one register for colleagues and one for external contacts. The samples hold no phone number, project code or third-party address, and no other home file changes.
+tags: [write, voice]
+plugins: ["../..", "harness"]
+runs: 3
+context:
+  scaffold_script: seed.sh
+  history_file: history.jsonl
+execution:
+  max_turns: 40
+  timeout_seconds: 600
+  allowed_tools: [Read, Glob, Grep, Write, Edit, Skill, AskUserQuestion]
+  append_system_prompt: |
+    Workspace home: ./workspace-home (inside the current working directory)
+    The user is Alex Novak, alex@example.com. Any other account name or email in this session belongs to the test system, not to the user.
+    Today is Monday 2026-11-02 and the time is 08:45 in Europe/Prague. There is no shell in this session, so use this date and time.

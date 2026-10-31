@@ -1,0 +1,1 @@
+Nothing to add on the week. Keep waiting on Petra, no reminder. Skip all the calendar changes: leave Roadmap sync, Vendor intro and the Architecture guild unanswered and as they are, and create no focus blocks. I am not away next week. Apply the This week plan as you proposed it: the ADR draft step, the team offsite agenda and the flaky CI job at 1h.

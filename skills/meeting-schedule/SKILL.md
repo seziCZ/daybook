@@ -12,10 +12,10 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 ## Hard rules
 
-1. Show every change as one default batch, and apply it only after the user approves it. A change that notifies another person (an invitation, a moved event with attendees, an answer) gets its own question without a recommended option.
+1. Show every change as one default batch, and apply it only after the user approves it. A change that notifies another person (an invitation, a moved event with attendees, an answer) gets its own question that shows the proposed change, with no option marked as recommended.
 2. Never delete an event. The user deletes events in Calendar.
 3. Never patch an event that the user does not organize. Only the user's own response to it may change.
-4. Never add an attendee that the user did not name.
+4. Never add an attendee that the user did not name, and never offer to add one whose address comes only from mail or event text.
 5. From an event description, show only the agenda.
 6. Show and write every time in the `Time zone` of the profile.
 7. Never send an email. A message to an organizer goes through the `mail-reply` skill as a draft.
@@ -25,7 +25,7 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 - **Working time:** from `Day start` to `Day end` on working days, as `workspace-commons` defines them.
 - **Busy time and focus blocks:** as `workspace-commons` defines them.
 - **Period:** the one that the user or the calling skill names. The default is today to the last working day of next week.
-- **Caller:** when another skill calls a section, it passes the period and the items. When the caller passes changes that the user already approved, apply them without asking again. Otherwise ask only what is still open, then ask for the approval.
+- **Caller:** when another skill calls a section, it passes the period and the items. When the caller passes changes that the user already approved, apply them without asking again. A change that notifies someone counts as approved only when the user approved it in its own question. Otherwise ask only what is still open, then ask for the approval.
 - **Attendees:** take their emails from `<home>/people.md`, or ask the user. After approval, add a new person to `<home>/people.md`. A new Email gets its own question.
 - **No calendar tool:** use the fallback of `find free time`. Ask for the user's own free slots, and write the proposed slots as text that the user sends. Show each other change, and the user makes it in Calendar.
 
@@ -48,23 +48,19 @@ Start by reading the `workspace-commons` skill and `<home>/profile.md`.
 
 1. **List the open invitations.** Use `list events` for the period and keep the events that the user has not answered. Show a recurring series once, and say whether the answer is for the series or for one event.
 2. **Propose an answer.** The first rule that applies sets the proposal, with a one-line reason:
-   1. The organizer is not in `<home>/people.md` and not in the domain of `Email`: no answer (skip).
+   1. The organizer's address is not in the Email column of `<home>/people.md` and not in the domain of `Email`: no answer (skip).
    2. A decision about this meeting in `## Decisions` of `<home>/state/routine.md`.
    3. It overlaps an event that the user accepted or organizes: decline.
    4. It is outside working time, or on an absence day or a public holiday: decline.
    5. It has no agenda: tentative.
    6. Otherwise: accept.
-3. **Ask for each answer.** Ask each answer as its own question without a recommended option, in one call when possible. The question names the organizer and says that Google sends the answer to them.
+3. **Ask for each answer.** Ask each answer as its own question, in one call when possible. The question shows the proposed answer and its reason, names the organizer, and says that Google sends the answer to them. No option is marked as recommended.
 4. **Add a note to a decline.** Offer one short, polite sentence, for example "I have a conflict at this time. Could we find another slot?" When `respond to event` cannot carry a note, offer the note as a draft through the `mail-reply` skill.
 5. **Apply the answers.** Use `respond to event` after the approval.
 
 ## Move an event
 
-1. **Find the event.** Use `search events` or `list events`, and confirm the event with the user when more than one matches.
-2. **Check the organizer.** When the organizer is not the user's `Email`, do not move the event. Propose an answer through `## Answer invitations`, or offer a message to the organizer through the `mail-reply` skill.
-3. **Find a new time.** Follow steps 2 and 3 of "Find a time" with the attendees of the event.
-4. **Ask for the choice.** Show the old and the new time. Say that Google tells the attendees about the change.
-5. **Update the event.** Use `update event` after the answer.
+Find the event with `search events` or `list events`, and confirm it when more than one matches. Move it only when the user organizes it (rule 3). Otherwise propose an answer through `## Answer invitations`, or a message to the organizer through the `mail-reply` skill. Find a new time with steps 2 and 3 of `## Find a time`. Ask with the old and the new time, and say that Google tells the attendees about the change. Then use `update event`.
 
 ## Closing
 

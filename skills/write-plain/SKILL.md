@@ -1,6 +1,6 @@
 ---
 name: write-plain
-description: Holds the rules for plain, short international English that busy and non-native readers understand on the first read, and checks a text against them. Use for the text that the skill-garden skills write, and when the user says "make it plainer", "simplify this" or "check my English".
+description: Holds the rules for plain, short international English and rewrites or checks a text against them, so that busy and non-native readers understand it on the first read. Use when the user says "make it plainer", asks to simplify, shorten or clarify a text, asks whether others will understand it, or asks to check their English, and for the text that the skill-garden skills write.
 license: Apache-2.0
 ---
 

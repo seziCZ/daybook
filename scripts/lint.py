@@ -9,6 +9,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+import sanitize_history  # noqa: E402
 SKILLS = ROOT / "skills"
 COMMONS_REF = SKILLS / "workspace-commons" / "references"
 problems = []
@@ -45,7 +47,7 @@ home_text = read(COMMONS_REF / "home.md")
 profile_keys = set(re.findall(r"^\| [A-Z][a-z]+(?: [a-z]+)* \| `([^`]+)` \|", home_text, re.M))
 profile_keys.add("Public holidays")
 home_files = {"profile.md", "tasks.md", "people.md", "voice.md", "notes", "state/routine.md",
-              "state/meeting-assist.md", "state/mail-follow-up.md", "state/<file>.md"}
+              "state/mail-follow-up.md", "state/<file>.md"}
 cap_verbs = ("search", "read", "list", "create", "update", "find", "respond", "recent")
 
 for name, text in skill_text.items():
@@ -122,14 +124,33 @@ for case in sorted(p for p in evals.iterdir() if (p / "case.yaml").exists()):
     if not graders:
         problem(case, "has no graders")
     negative_only = "trigger" in re.search(r"^tags: \[(.*)\]", yaml, re.M).group(1)
-    if not negative_only and not any("type: tool_used" in read(g) and not re.search(r"^min: 0", read(g), re.M) for g in graders):
+    approval = "history_file:" in yaml
+    if approval:
+        # The written files prove that the skill acted, whichever write tool it chose.
+        file_check = any("source: file" in read(g) and "not_contains" not in read(g) for g in graders)
+        mock_write = any(re.search(r"^tool: mcp__", read(g), re.M) and not re.search(r"^max: 0", read(g), re.M)
+                         for g in graders)
+        judged = any("type: llm" in read(g) for g in graders)
+        if not (file_check or mock_write or judged):
+            problem(case, "an approval case needs a positive check: a written file, a mocked write call or an llm grader")
+    elif not negative_only and not any("type: tool_used" in read(g) and not re.search(r"^min: 0", read(g), re.M) for g in graders):
         problem(case, "has no control grader (tool_used that must be called)")
     for g in graders:
         if "target: mock_calls" in read(g):
             problem(g, "uses target: mock_calls, which is not reliable")
-    for skill in re.findall(r"\(\?:\[\w-\]\+:\)\?([a-z-]+)", "".join(read(g) for g in graders)):
+    for skill in re.findall(r"\(\?:\[\\w-\]\+:\)\?([a-z-]+)", "".join(read(g) for g in graders)):
         if skill not in skill_names:
             problem(case, f"grader names unknown skill {skill}")
+    for stray in case.rglob("*.jsonl"):
+        if stray.name != "history.jsonl":
+            problem(stray, "only history.jsonl may be committed; the runner writes raw sessions with account data here")
+        found = sanitize_history.leaks(read(stray))
+        if found:
+            problem(stray, f"personal data: {sorted(found)}")
+    history = case / "history.jsonl"
+    if "history_file:" in yaml:
+        if not history.exists() or not (case / "first-turn.md").exists():
+            problem(case, "an approval case needs history.jsonl and first-turn.md")
 
 for p in problems:
     print(p)

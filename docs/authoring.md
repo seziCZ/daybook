@@ -2,13 +2,18 @@
 
 These rules keep the skills coherent. Read them together with the `workspace-commons` skill and its two reference files before you write or change a skill.
 
+## Two principles
+
+- **Simple.** A person must be able to read a skill and trust it. Prefer removing or merging a rule over adding one. Aim for under 80 lines per `SKILL.md`, in plain words, with no hidden logic. A reader sees at a glance what the skill reads, what it may write, and when it asks first.
+- **Practical.** Keep only skills that people really use. Drop or merge a skill that a busy professional with Google Workspace would not use at least weekly, or whose job another skill already does. The decisions are in "Skills kept, merged and dropped" of [spec.md](spec.md).
+
 ## Shape
 
 - One folder `skills/<name>/` with `SKILL.md`. Add `references/`, `assets/` or `scripts/` only when the skill needs them, and keep them one level deep.
 - The name is `<family>-<object>` in kebab-case, the same as the folder. The families are `workspace-`, `routine-`, `task-`, `mail-`, `meeting-` and `write-`.
 - The frontmatter has exactly three fields: `name`, `description` and `license: Apache-2.0`. Other fields break the Agent Skills specification.
 - The description is in the third person. It says what the skill does, then "Use when ..." with the words that users say (inbox, calendar, meeting, todo). Keep it under 400 characters, and use no angle brackets (`<` or `>`) in it.
-- Aim for 40 to 90 lines in `SKILL.md`, and never more than 120. Every line costs context in every session that loads the skill.
+- Aim for 40 to 80 lines in `SKILL.md`, and never more than 120. Every line costs context in every session that loads the skill.
 
 ## Body
 

@@ -33,7 +33,7 @@ Run the steps as in "Sessions" of the `workspace-commons` skill. When a skill th
    - days without a free slot of the `Focus block` length.
 
    A series with a decision in `## Decisions` of `<home>/state/routine.md` is not asked about again. Ask in one call, as separate questions:
-   - The answers to invitations and the decisions on recurring series (keep or decline). An answer notifies the organizer, so this question has no recommended option. Propose the answers by `## Answer invitations` of the `meeting-schedule` skill.
+   - The answers to invitations and the decisions on recurring series (keep or decline). Load the `meeting-schedule` skill and propose an answer for each invitation by the rules of its `## Answer invitations`, with the one-line reason, for example "decline: overlaps Customer demo" or "no answer: unknown organizer". An answer notifies the organizer, so each answer is its own question with no option marked as recommended. An invitation with "no answer" is only listed with its reason, never asked.
    - The focus blocks, as a default batch, by `## Block focus time` of the `meeting-schedule` skill.
    - "Are you away on any day next week?" Take out-of-office events as absences too.
 
@@ -41,7 +41,7 @@ Run the steps as in "Sessions" of the `workspace-commons` skill. When a skill th
 
    Then write the absences to `## Absences` of `<home>/state/routine.md`. Write each decision on a recurring series to `## Decisions`, also "keep". Remove the absences that ended before the last working day, and the decisions about series that ended.
 
-4. **Choose next week.** Take the free hours of each working day of next week, as `workspace-commons` defines them, with the busy time after step 3. A day never has less than 0 free hours.
+4. **Choose next week.** Take the free hours of each working day of next week, as `workspace-commons` defines them, with the busy time after step 3.
 
    Propose `## This week` within the sum of free hours, most important first:
    1. items with `due:` in next week, from any section;

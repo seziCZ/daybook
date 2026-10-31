@@ -46,3 +46,15 @@ evals/
 - A headless run has no question tool, so the skills ask in plain text and the turn ends there. Check "asks before writing" with a file that must stay unchanged, or with an `llm` grader with `focus: trace`.
 - An `llm` grader with `focus: files` sees only the file paths. To judge a written note, use `focus: trace`, which shows the content of the Write call.
 - When a case fails because a skill behaves wrong, fix the skill, not the grader.
+
+## Approval cases
+
+Most skills propose a change and then wait for the user. An approval case tests what the skill writes after the answer, in two turns:
+
+1. `first-turn.md` holds the request, for example "Add a task: ...".
+2. `prompt.md` holds the answer, for example "apply".
+3. `case.yaml` has `context.history_file: history.jsonl`.
+4. Record the first turn with `python -I -B scripts/record_history.py <case>`. The script runs the first turn once, removes the system prompt, the account data and the local paths with `scripts/sanitize_history.py`, and writes `history.jsonl`. It refuses to write a file that still holds an email outside the `example` domains or a user folder path.
+5. Grade the written files with `regex` graders on `source: file`, and the tool calls with `tool_used` and `input_match`.
+
+Re-record every approval case whose skills changed, because `history.jsonl` contains the skill text of the recording. `task-capture-writes-format` is the template.

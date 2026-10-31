@@ -1,0 +1,1 @@
+{"id": "thr-603", "messages": [{"id": "msg-603a", "sender": "Jan Novotny <jan@example.com>", "toRecipients": ["alex@example.com"], "date": "2026-10-30T16:20:00+01:00", "subject": "API design doc", "plaintextBody": "Hi Alex, could you review the API design doc before Thursday's review? Thanks, Jan"}]}

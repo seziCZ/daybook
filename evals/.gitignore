@@ -1,2 +1,6 @@
 results/
 full-run.log
+# The eval runner writes resumed sessions into the case folder. They hold
+# account data and local paths, so only the sanitized history is kept.
+*.jsonl
+!history.jsonl

@@ -25,9 +25,9 @@ Start by reading the `workspace-commons` skill and, when it exists, `<home>/prof
 2. **Check the tools.** Find the backend for mail, calendar and files in the order of `workspace-commons`. Say in one line what works, for example "Gmail and Calendar through connectors, no Drive". When mail or calendar has no backend, skip its part of step 3, and its keys take their defaults.
 3. **Infer.** Read the date, the time and the time zone from the shell. Then collect:
    - From `list events` for the last 4 weeks: the days with meetings (`Working days`), the calendar time zone (`Time zone`), and the recurring meetings. Propose `Day start` as the earlier of 09:00 and the usual first meeting. Propose `Day end` as the later of 17:00 and the usual end of the last meeting. Round both to the half hour.
-   - From `search mail` with `in:sent after:<30 days ago>`: the sender name (`Name`) and the main languages of the subjects (`Languages`). The first language is also the `Note language`. Collect the 10 to 15 people that the user writes to most, as rows for `people.md`.
+   - From `search mail` with `in:sent after:<30 days ago>`: the sender name (`Name`) and the main languages of the subjects (`Languages`). The first language is also the `Note language`. Collect the 10 to 15 people that the user writes to most, as rows for `people.md`. When two addresses share a display name, or differ by one or two characters, keep the one in the domain of the user's `Email`, or else the one the user writes to more often. Leave the other out and name it in the preview as a possible lookalike.
 
-   All other keys take their defaults from the home reference of `workspace-commons`. `Email` stays empty, because its default is the address of the connected account.
+   Write `Email` as the sender address of the user's sent mail. All other keys take their defaults from the home reference of `workspace-commons`.
 4. **Ask and approve.** Ask one round of 4 questions, each with the proposed answer first:
    - **Role:** the user types it.
    - **Working time:** confirm `Working days`, `Day start`, `Day end` and `Planned hours` in one answer. An example is "Monday to Friday, 08:30 to 17:30, 7 planned hours". Always confirm both times, even when they are the defaults. Propose `Planned hours` as 1 to 2 hours less than the working day, as a buffer for mail and interruptions.
@@ -36,7 +36,7 @@ Start by reading the `workspace-commons` skill and, when it exists, `<home>/prof
 
    After "Change a value", ask which values to change, and then ask the write question again.
 5. **Write.** After "Write the home":
-   - Create the home. Copy the templates from `assets/home/` of this skill: `profile.md`, `tasks.md`, `people.md` and `voice.md`. Create the empty folders `state/` and `notes/meetings/`. The skills create their state files themselves.
+   - Create the home. Copy the templates from `assets/home/` of this skill: `profile.md`, `tasks.md`, `people.md` and `voice.md`. Create no empty folders. Each skill creates its folder and its state file when it writes the first one.
    - Fill the values in `profile.md` and the rows in `people.md`. Put the line `<!-- Proposed by workspace-setup. Please check the dates. -->` above the holidays.
    - When the home is not `~/workspace-home`, add the line `Workspace home: <path>` to the user-level instructions file of the agent, so that every project finds the home. Examples are `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` and `~/.gemini/GEMINI.md`. Ask when it is not clear which file the agent uses.
 6. **Voice.** Offer to run `## Learn` of the `write-voice` skill now. It proposes `<home>/voice.md` from the sent mail. When that skill is not installed, say that `voice.md` stays a stub until it is.
@@ -49,7 +49,7 @@ Start by reading the `workspace-commons` skill and, when it exists, `<home>/prof
 
 Run this when the home already has `profile.md`.
 
-1. **Compare.** Check the home against the home reference of the `workspace-commons` skill: the four files, the folders `state/` and `notes/meetings/`, every heading and key of `profile.md`, the two tables of `people.md`, and the four sections of `tasks.md`. Check that `## Public holidays` reaches into next year, and that the `Workspace home:` line points to this home.
-2. **Propose.** Show what is missing as a default batch: missing files and folders from the templates, missing headings and keys of `profile.md` with their default value, missing tables of `people.md`, and holidays to add. Keep every existing value. For a missing section of `tasks.md` or a gap in `voice.md`, only report it and name the owner skill, `task-list` or `write-voice`.
+1. **Compare.** Check the home against the home reference of the `workspace-commons` skill: the four files, every heading and key of `profile.md`, the two tables of `people.md`, and the four sections of `tasks.md`. Check that `## Public holidays` reaches into next year, and that the `Workspace home:` line points to this home.
+2. **Propose.** Show what is missing as a default batch: missing files from the templates, missing headings and keys of `profile.md` with their default value, missing tables of `people.md`, and holidays to add. Keep every existing value. For a missing section of `tasks.md` or a gap in `voice.md`, only report it and name the owner skill, `task-list` or `write-voice`.
 3. **Change values.** When the user wants to change values, infer those keys again as in step 3. Show each old and new value before you write.
 4. **Close.** Add only the approved items. Then say in one line what was added and what still needs the user.

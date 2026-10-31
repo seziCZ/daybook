@@ -1,0 +1,1 @@
+This paragraph is too heavy for our Czech and German colleagues, make it easier to read: 'Notwithstanding the aforementioned considerations, it is incumbent upon the team to expedite the remediation of outstanding deficiencies prior to the commencement of the subsequent release cycle.'

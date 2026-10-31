@@ -123,16 +123,6 @@ YYYY-MM-DD to YYYY-MM-DD <reason>
 YYYY-MM-DD <recurring meeting>: <decision>
 ```
 
-`state/meeting-assist.md`:
-
-```
-# Meeting assist state
-
-Written by: meeting-assist appends remarks; meeting-note removes the lines it used and the old lines that the user drops.
-
-YYYY-MM-DD HH:MM | <meeting> | <remark>
-```
-
 `state/mail-follow-up.md`:
 
 ```
