@@ -1,5 +1,5 @@
 {
-  "name": "skill-garden",
+  "name": "daybook",
   "version": "0.1.0",
   "description": "Productivity skills for Google Workspace: a morning and evening routine, a task list, meeting preparation and notes, mail triage and reply drafts. Safe by default: the skills read, write drafts, and change only what you approve.",
   "author": {

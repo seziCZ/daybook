@@ -53,7 +53,7 @@ Haiku often answers a request with the Google tools directly and does not load t
 
 ## After the final review
 
-After the full run on all three models, four independent reviewers read the skills. We applied their verified findings and recorded all approval histories again. Then every case ran once on Sonnet. 78 of 79 cases scored 1.0. `weekly-review-proposes` scored 0.93 in 3 more runs, the same as before. `weekly-plan-applied` scored 0.98 in 3 runs. Haiku and Opus were not run again after this review.
+After the full run on all three models, four independent reviewers read the skills. We applied their verified findings and recorded all approval histories again. Then every case ran once on Sonnet. 78 of 79 cases scored 1.0. `weekly-review-proposes` scored 0.93 in 3 more runs, the same as before. `weekly-plan-applied` scored 0.98 in 3 runs. After the rename to daybook, every case ran once more on Sonnet. 77 of 79 scored 1.0. `reply-saves-draft` then passed 3 of 3, and `weekly-review-proposes` failed one judge, as before. Haiku and Opus were not run again after this review.
 
 ## How the numbers were made
 

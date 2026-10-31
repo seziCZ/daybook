@@ -1,4 +1,4 @@
-# skill-garden
+# daybook
 
 Agent skills that help one person run their working day with Google Workspace. They plan your day and week, keep one task list, prepare and record your meetings, sort your inbox and write reply drafts.
 
@@ -19,17 +19,17 @@ First, connect Gmail, Google Calendar and Google Drive to your agent (see [Googl
 In Claude Code:
 
 ```
-claude plugin marketplace add seziCZ/skill-garden
-claude plugin install skill-garden@skill-garden
+claude plugin marketplace add seziCZ/daybook
+claude plugin install daybook@daybook
 ```
 
 In other agents (this needs Node.js):
 
 ```
-npx skills add seziCZ/skill-garden
+npx skills add seziCZ/daybook
 ```
 
-Then say "set up skill-garden" to your agent, or run `/workspace-setup` in Claude Code. Setup creates your home folder, which is a folder of plain Markdown files on your computer. It reads your working hours from your calendar and asks a few questions.
+Then say "set up daybook" to your agent, or run `/workspace-setup` in Claude Code. Setup creates your home folder, which is a folder of plain Markdown files on your computer. It reads your working hours from your calendar and asks a few questions.
 
 After that, talk to your agent as usual. For example:
 

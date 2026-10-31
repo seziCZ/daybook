@@ -17,6 +17,7 @@ import sys
 
 KEEP = {"user", "assistant"}
 NEUTRAL = "C:\\eval\\run"
+PLUGIN = "C:\\eval\\plugin"
 
 
 def leaks(text):
@@ -45,10 +46,17 @@ def main():
     for form, sep in ((cwd, "\\"), (cwd.replace("\\", "/"), "/")):
         replacements.append((json.dumps(form + sep)[1:-1], ""))
         replacements.append((json.dumps(form)[1:-1], "."))
+    # The plugin is loaded from this repository, so skill paths name the local clone.
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     replacements += [
         (json.dumps(run_dir)[1:-1], json.dumps(NEUTRAL)[1:-1]),
         (json.dumps(run_dir.replace("\\", "/"))[1:-1], "C:/eval/run"),
     ]
+    for root in {repo[0].upper() + repo[1:], repo[0].lower() + repo[1:]}:
+        replacements += [
+            (json.dumps(root)[1:-1], json.dumps(PLUGIN)[1:-1]),
+            (json.dumps(root.replace("\\", "/"))[1:-1], "C:/eval/plugin"),
+        ]
     lines = []
     for raw in open(src, encoding="utf-8"):
         entry = json.loads(raw)

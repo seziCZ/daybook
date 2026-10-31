@@ -1,1 +1,1 @@
-Set up skill-garden for me.
+Set up daybook for me.

@@ -1,4 +1,4 @@
-"""Checks the coherence of the skill-garden repository.
+"""Checks the coherence of the daybook repository.
 
 Run from the repository root: python -I -B scripts/lint.py
 Exits 1 when it finds a problem. Uses only the Python standard library.

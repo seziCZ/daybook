@@ -1,4 +1,4 @@
-# Writing a skill-garden skill
+# Writing a daybook skill
 
 Read these rules before you write or change a skill, together with the `workspace-commons` skill and its two reference files.
 
